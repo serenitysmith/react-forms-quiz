@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React, {useState} from 'react';
+
 
 function App() {
+ 
+  
+  const [firstName, setFirstName] = React.useState("")
+  /**
+   * Challenge: Track the applicant's last name as well
+   */
+
+  // my try at above challenge 
+  const [lastName, setLastName] = React.useState("")
+  ///did quiz on mjy own, scrimba says not the baest pracice but works, would like you to use an oject innstead of tw differnt state changes 
+
+  console.log(firstName, lastName)
+
+  
+  function handleChange(event) {
+      setFirstName(event.target.value)
+      setLastName(event.target.value)
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <form>
+          <input
+              type="text"
+              placeholder="First Name"
+              onChange={handleChange}
+
+          />
+          <input
+              type="text"
+              placeholder="Last Name"
+              onChange={handleChange}
+              
+          />
+      </form>
+  )
 }
 
 export default App;
